@@ -1,13 +1,24 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+
+    state = {
+        count: 0
+    }
+
     render() {
         return (
             <div>
-                <h1>First react component!</h1>
+                <span>{ this.formateCount() }</span>
             </div>
         );
     }
+
+    formateCount() {
+        const { count } = this.state;
+        return count === 0 ? "Zero" : count;
+    }
+
 }
 
 export default Counter;
