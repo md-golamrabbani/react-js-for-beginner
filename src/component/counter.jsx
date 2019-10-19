@@ -2,29 +2,33 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    colors: []
+    count: 0
   };
 
-  renderColors() {
-    if (this.state.colors.length === 0) return <p>There are no colors!</p>;
-
-    return (
-      <ul>
-        {this.state.colors.map(color => (
-          <li key={color}>{color}</li>
-        ))}
-      </ul>
-    );
+  handleCount() {
+    console.log("Increment!");
   }
 
   render() {
     return (
       <div>
-        { this.state.colors.length === 0 && "Please, create a new color!" }
-        { this.renderColors() }
+        <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
+        <button onClick={this.handleCount} className="btn btn-success">
+          Submit
+        </button>
       </div>
     );
+  }
+
+  getBadgeClasses() {
+    let classes = "badge m-4 badge-";
+    classes += this.state.count === 0 ? "warning" : "primary";
+    return classes;
+  }
+
+  formateCount() {
+    const { count } = this.state;
+    return count === 0 ? "Zero" : count;
   }
 }
 
