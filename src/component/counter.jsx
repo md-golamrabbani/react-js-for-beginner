@@ -3,13 +3,16 @@ import React, { Component } from "react";
 class Counter extends Component {
 
     state = {
-        count: 0
+        count: 0,
+        imageUrl: "https://picsum.photos/200"
     }
 
     render() {
         return (
             <div>
-                <span>{ this.formateCount() }</span>
+                <img src={ this.state.imageUrl } alt=""/>
+                <span className="badge badge-primary m-4">{ this.formateCount() }</span>
+                <button className="btn btn-success">Submit</button>
             </div>
         );
     }
