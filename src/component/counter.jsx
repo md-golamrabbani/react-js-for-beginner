@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class Counter extends Component {
 
     state = {
-        count: 0
+        count: 0,
+        colors: ["Red", "Green", "Blue"]
     }
 
     render() {
@@ -11,6 +12,9 @@ class Counter extends Component {
             <div>
                 <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
                 <button className="btn btn-success">Submit</button>
+                <ul>
+                    { this.state.colors.map(color => <li key={color}>{color}</li>) }
+                </ul>
             </div>
         );
     }
