@@ -6,15 +6,10 @@ class Counter extends Component {
         count: 0
     }
 
-    style = {
-        fontSize: 50,
-        fontWeight: 'bold'
-    }
-
     render() {
         return (
             <div>
-                <span style={ this.style } className="badge badge-primary m-4">{ this.formateCount() }</span>
+                <span style={ { fontSize: 10 } } className="badge badge-primary m-4">{ this.formateCount() }</span>
                 <button className="btn btn-success">Submit</button>
             </div>
         );
