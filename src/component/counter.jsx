@@ -9,10 +9,16 @@ class Counter extends Component {
     render() {
         return (
             <div>
-                <span style={ { fontSize: 10 } } className="badge badge-primary m-4">{ this.formateCount() }</span>
+                <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
                 <button className="btn btn-success">Submit</button>
             </div>
         );
+    }
+
+    getBadgeClasses() {
+        let classes = "badge m-4 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        return classes;
     }
 
     formateCount() {
