@@ -16,10 +16,13 @@ class Counter extends Component {
       <div>
         <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
         <button
-          onClick={(product) => this.handleCount(product)}
+          onClick={product => this.handleCount(product)}
           className="btn btn-success"
         >
           Submit
+        </button>
+        <button className="btn btn-danger m-4" onClick={() => this.props.onDelete(counterId)}>
+          Delete
         </button>
       </div>
     );
