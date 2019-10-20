@@ -5,17 +5,21 @@ class Counter extends Component {
     count: 0
   };
 
-  handleCount = () => {
+  handleCount = product => {
+    console.log(product);
     this.setState({
-        count: this.state.count + 1
+      count: this.state.count + 1
     });
-  }
+  };
 
   render() {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
-        <button onClick={this.handleCount} className="btn btn-success">
+        <button
+          onClick={(product) => this.handleCount(product)}
+          className="btn btn-success"
+        >
           Submit
         </button>
       </div>
